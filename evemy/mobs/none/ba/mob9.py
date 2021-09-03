@@ -17,7 +17,7 @@ class mob9:
     def ud(self):
         self.items=ude.ud(self.items,self.canvas)
 
-    def loop(self,spritexy):
+    def loop(self,spritexy,sixy):
         ude.loop(self.items,self.canvas,self.sk,spritexy)
         for itme in self.items:
             self.random=random.randint(1,self.uf)
@@ -45,4 +45,11 @@ class mob9:
                         self.si.ud(self.xy)
                         self.xy=[self.xy[2]-20,self.xy[3]-5,self.xy[2],self.xy[1],[-1,0]]
                         self.si.ud(self.xy)
-        self.si.move()
+        for item in range(len(self.items)):
+            if item<len(self.items):
+                for sixyy in sixy:
+                    self.xy=self.canvas.coords(self.items[item][0])
+                    if sixyy[2]>self.xy[0] and self.xy[2]>sixyy[0] and sixyy[1]<self.xy[3] and self.xy[1]<sixyy[3]:
+                        self.canvas.delete(self.items[item][0])
+                        del self.items[item]
+        return self.si.move(spritexy)

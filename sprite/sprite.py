@@ -34,7 +34,7 @@ class sprite:
         self.y=self.eventxy[1]-(self.xy[1]+self.xy[3])//2
         self.canvas.move(self.items[0],self.x,self.y)
 
-        self.si.loop(2)    
+        self.xys=self.si.loop(2)    
 
     def button3(self,event):
         self.ur+=1

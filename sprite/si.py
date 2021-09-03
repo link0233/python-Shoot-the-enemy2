@@ -17,9 +17,10 @@ class sprite_si:
                     self.canvas.move(self.items[item][0],0,10)
                 else:
                     self.canvas.move(self.items[item][0],-10,0)
-                self.xys.append(self.canvas.coords(self.items[item][0]))
 
                 self.xy=self.canvas.coords(self.items[item][0])
+                self.xys.append(self.xy)
                 if self.xy[0]<0 or self.xy[1]<0 or self.xy[2]>640 or self.xy[3]>480: #or tu[item]==1:
                     self.canvas.delete(self.items[item][0])
                     del self.items[item]
+        return self.xys

@@ -8,6 +8,8 @@ from evemy.mobs.none.ab.mob7 import *
 from evemy.mobs.none.ab.mob8 import *
 from evemy.mobs.none.ba.mob9 import *
 from evemy.mobs.none.ba.mob10 import *
+from evemy.mobs.none.ba.mob11 import *
+from evemy.mobs.none.ba.mob12 import *
 
 class mobs:
     def __init__(self,canvas):
@@ -22,6 +24,8 @@ class mobs:
         self.mob8=mob8(self.c)
         self.mob9=mob9(self.c)
         self.mob10=mob10(self.c)
+        self.mob11=mob11(self.c)
+        self.mob12=mob12(self.c)
 
     def ud(self,rk):
         if rk==1:
@@ -44,15 +48,23 @@ class mobs:
             self.mob9.ud()
         elif rk==10:
             self.mob10.ud()
+        elif rk==11:
+            self.mob11.ud()
+        elif rk==12:
+            self.mob12.ud()
      
-    def loop(self,spritexy):
-        self.mob1.loop(spritexy)
-        self.mob2.loop(spritexy)
-        self.mob3.loop(spritexy)
-        self.mob4.loop(spritexy)
-        self.mob5.loop(spritexy)
-        self.mob6.loop(spritexy)
-        self.mob7.loop(spritexy)
-        self.mob8.loop(spritexy)
-        self.mob9.loop(spritexy)
-        self.mob10.loop(spritexy)
+    def loop(self,spritexy,sixy):
+        self.asd=0
+        self.asd+=self.mob1.loop(spritexy,sixy)
+        self.asd+=self.mob2.loop(spritexy,sixy)
+        self.asd+=self.mob3.loop(spritexy,sixy)
+        self.asd+=self.mob4.loop(spritexy,sixy)
+        self.asd+=self.mob5.loop(spritexy,sixy)
+        self.asd+=self.mob6.loop(spritexy,sixy)
+        self.asd+=self.mob7.loop(spritexy,sixy)
+        self.asd+=self.mob8.loop(spritexy,sixy)
+        self.asd+=self.mob9.loop(spritexy,sixy)
+        self.asd+=self.mob10.loop(spritexy,sixy)
+        self.asd+=self.mob11.loop(spritexy,sixy)
+        self.asd+=self.mob12.loop(spritexy,sixy)
+        return self.asd

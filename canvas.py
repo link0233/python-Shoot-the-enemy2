@@ -27,5 +27,5 @@ class canvas(Canvas):
         self.dk+=1
         if self.dk>100:
             self.dk=0
-            self.mobs.ud(9)
-        self.mobs.loop(self.sprite.xy)
+            self.mobs.ud(1)
+        print(self.mobs.loop(self.sprite.xy,self.sprite.xys))
