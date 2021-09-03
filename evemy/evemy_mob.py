@@ -45,3 +45,14 @@ class mobs:
         elif rk==10:
             self.mob10.ud()
      
+    def loop(self,spritexy):
+        self.mob1.loop(spritexy)
+        self.mob2.loop(spritexy)
+        self.mob3.loop(spritexy)
+        self.mob4.loop(spritexy)
+        self.mob5.loop(spritexy)
+        self.mob6.loop(spritexy)
+        self.mob7.loop(spritexy)
+        self.mob8.loop(spritexy)
+        self.mob9.loop(spritexy)
+        self.mob10.loop(spritexy)

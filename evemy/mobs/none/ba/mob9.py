@@ -26,23 +26,23 @@ class mob9:
                     self.random=random.randint(1,4)
                     self.xy=self.canvas.coords(itme[0])
                     if self.random==1:
-                        self.xy=[self.xy[0],self.xy[1]-20,self.xy[0]+5,self.xy[1]]
+                        self.xy=[self.xy[0],self.xy[1]-20,self.xy[0]+5,self.xy[1],[0,-1]]
                         self.si.ud(self.xy)
-                        self.xy=[self.xy[2]+5,self.xy[1]-20,self.xy[0],self.xy[1]]
+                        self.xy=[self.xy[2]+5,self.xy[1]-20,self.xy[0],self.xy[1],[0,-1]]
                         self.si.ud(self.xy)
                     elif self.random==2:
-                        self.xy=[self.xy[2]+20,self.xy[1],self.xy[2],self.xy[1]-5]
+                        self.xy=[self.xy[2]+20,self.xy[1],self.xy[2],self.xy[1]-5,[1,0]]
                         self.si.ud(self.xy)
-                        self.xy=[self.xy[2]+20,self.xy[3]-5,self.xy[2],self.xy[1]]
+                        self.xy=[self.xy[2]+20,self.xy[3]-5,self.xy[2],self.xy[1],[1,0]]
                         self.si.ud(self.xy)
                     elif self.random==3:
-                        self.xy=[self.xy[0],self.xy[1],self.xy[0]+5,self.xy[1]+20]
+                        self.xy=[self.xy[0],self.xy[1],self.xy[0]+5,self.xy[1]+20,[0,1]]
                         self.si.ud(self.xy)
-                        self.xy=[self.xy[2]-5,self.xy[1],self.xy[0],self.xy[1]+20]
+                        self.xy=[self.xy[2]-5,self.xy[1],self.xy[0],self.xy[1]+20,[0,1]]
                         self.si.ud(self.xy)
                     else:
-                        self.xy=[self.xy[2]-20,self.xy[1],self.xy[2],self.xy[1]+5]
+                        self.xy=[self.xy[2]-20,self.xy[1],self.xy[2],self.xy[1]+5,[-1,0]]
                         self.si.ud(self.xy)
-                        self.xy=[self.xy[2]-20,self.xy[3]-5,self.xy[2],self.xy[1]]
+                        self.xy=[self.xy[2]-20,self.xy[3]-5,self.xy[2],self.xy[1],[-1,0]]
                         self.si.ud(self.xy)
         self.si.move()
