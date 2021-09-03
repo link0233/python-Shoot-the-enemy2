@@ -9,9 +9,12 @@ class sprite:
         self.canvas.bind('<Motion>',self.mot)
         self.canvas.bind('<Button-1>',self.button1)
         self.eventxy=[0,0]
+        self.asd=0
         self.si=sprite_si(self.canvas)
 
-    def loop(self):
+    def loop(self,asd):
+        self.asd+=asd
+        print(self.asd)
         self.xy=self.canvas.coords(self.items[0])#調整方向
         if self.ur==1:
             self.canvas.delete(self.items[1])

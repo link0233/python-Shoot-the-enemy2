@@ -21,11 +21,12 @@ class canvas(Canvas):
         self.sprite=sprite(self)
         self.mobs=mobs(self)
         self.dk=0
+        self.asd=0
 
     def loop(self):
-        self.sprite.loop()
+        self.sprite.loop(self.asd)
         self.dk+=1
         if self.dk>100:
             self.dk=0
-            self.mobs.ud(1)
-        print(self.mobs.loop(self.sprite.xy,self.sprite.xys))
+            self.mobs.ud(10)
+        self.asd=self.mobs.loop(self.sprite.xy,self.sprite.xys)
