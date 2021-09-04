@@ -2,7 +2,7 @@ from tkinter import*
 import time
 
 from sprite.sprite import sprite
-
+import random
 from evemy.evemy_mob import mobs
 class canvas(Canvas):
     def __init__(self):
@@ -11,9 +11,11 @@ class canvas(Canvas):
         super(canvas,self).__init__(self.root,width=640,height=480,bg='#ffffff')
         self.pack()
         self.setp()
+        self.time=0
         while True :
             self.loop()
             self.root.update()
+            self.time+=1
             time.sleep(0.01)
         self.root.mainloop()
     
@@ -25,8 +27,17 @@ class canvas(Canvas):
 
     def loop(self):
         self.sprite.loop(self.asd)
-        self.dk+=1
-        if self.dk>100:
-            self.dk=0
-            self.mobs.ud(10)
+        if self.time % 5==0:
+            if self.time<500:
+                self.dk+=0.5
+            elif self.time>500 and self.time<3000:
+                self.dk+=1
+            elif self.time>3000 and self.time<5000:
+                self.dk+=2.5
+            else:
+                self.dk+=4
+            if self.dk>1:
+                self.ra=random.randint(1,int(self.dk))%33
+                self.dk-=self.ra
+                self.mobs.ud(self.ra)
         self.asd=self.mobs.loop(self.sprite.xy,self.sprite.xys)
