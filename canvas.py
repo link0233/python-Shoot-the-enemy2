@@ -26,18 +26,23 @@ class canvas(Canvas):
         self.asd=0
 
     def loop(self):
-        self.sprite.loop(self.asd)
-        if self.time % 5==0:
-            if self.time<500:
-                self.dk+=0.5
-            elif self.time>500 and self.time<3000:
-                self.dk+=1
-            elif self.time>3000 and self.time<5000:
-                self.dk+=2.5
-            else:
-                self.dk+=4
-            if self.dk>1:
-                self.ra=random.randint(1,int(self.dk))%33
-                self.dk-=self.ra
-                self.mobs.ud(self.ra)
-        self.asd=self.mobs.loop(self.sprite.xy,self.sprite.xys)
+        if self.sprite.asd>1:
+            self.sprite.loop(self.asd)
+            if self.time % 5==0:
+                if self.time<500:
+                    self.dk+=0.5
+                elif self.time>500 and self.time<3000:
+                    self.dk+=1
+                elif self.time>3000 and self.time<5000:
+                    self.dk+=2.5
+                else:
+                    self.dk+=4
+                if self.dk>1:
+                    self.ra=random.randint(1,int(self.dk))%33
+                    self.dk-=self.ra
+                    self.mobs.ud(self.ra)
+            self.asd=self.mobs.loop(self.sprite.xy,self.sprite.xys)
+        else:
+            self.create_text(240,320,text='你輸了'+str(self.time/100))
+            while True:
+                pass
